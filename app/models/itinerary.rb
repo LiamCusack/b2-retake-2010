@@ -1,4 +1,4 @@
 class Itinerary < ApplicationRecord
-  belongs_to :flights
-  belongs_to :passengers
+  belongs_to :flight
+  belongs_to :passenger
 end

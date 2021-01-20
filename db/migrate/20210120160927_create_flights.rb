@@ -6,7 +6,7 @@ class CreateFlights < ActiveRecord::Migration[5.2]
       t.time :time
       t.string :departure_city
       t.string :arrival_city
-      t.references :airlines, foreign_key: true
+      t.references :airline, foreign_key: true
 
       t.timestamps
     end
