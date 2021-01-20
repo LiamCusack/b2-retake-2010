@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Itinerary, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+  describe 'relationships' do
+    it { should belong_to(:passengers) }
+    it { should belong_to(:flights)}
+  end

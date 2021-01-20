@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Flight, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+  describe 'relationships' do
+    it { should have_many(:itineraries) }
+    it { should have_many(:passengers).through(:itineraries) }
+  end
