@@ -1,7 +1,7 @@
 <h1>Flights Index</h1>
 
 <ul>
-  <% @flights.each do |flight| %>
+  <% Flight.order_by_most_passengers do |flight| %>
     <section id="flight-<%= flight.id %>">
       <li><ul>Flight Number: <%= flight.number %><br>
       <% flight.passengers.each do |passenger| %>
