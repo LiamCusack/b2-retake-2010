@@ -31,10 +31,7 @@ describe 'Flight Index' do
   it 'should display a link to remove passengers from a flight' do
     expect(page).to have_link("Remove Passenger")
 
-    within("#flight-#{@f1.id}") do
-      expect(page).to have_content(@p1.name)
-      expect(page).to have_content(@p2.name)
-    end
+    expect(page).to have_content(@p1.name)
 
     within("#flight-#{@f1.id}") do
       within("#passenger-#{@p1.id}") do
