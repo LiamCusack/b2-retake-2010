@@ -5,7 +5,9 @@
     <section id="flight-<%= flight.id %>">
       <li><ul>Flight Number: <%= flight.number %><br>
       <% flight.passengers.each do |passenger| %>
-        <li><%= passenger.name %></li>
+        <section id="passenger-<%= passenger.id %>">
+          <li><%= passenger.name %></li>
+        </section>
       <% end %></ul></li>
     </section>
   <% end %>
