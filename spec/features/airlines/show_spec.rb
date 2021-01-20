@@ -13,7 +13,7 @@ describe 'Airlines Show' do
     @i3 = Itinerary.create!(flight_id: @f2.id, passenger_id: @p3.id)
 
 
-    visit airlines_path(@a1)
+    visit airline_path(@a1)
   end
 
   it 'should list the names of all the passengers flying with that airline' do
