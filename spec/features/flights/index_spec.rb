@@ -14,6 +14,7 @@ describe 'Flight Index' do
   end
 
   it 'should display a list of all flight numbers' do
+    save_and_open_page
     expect(page).to have_content(@f1.number)
   end
 
