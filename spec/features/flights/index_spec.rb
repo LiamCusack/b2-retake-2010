@@ -14,12 +14,18 @@ describe 'Flight Index' do
   end
 
   it 'should display a list of all flight numbers' do
-    save_and_open_page
-    expect(page).to have_content(@f1.number)
+
+    within("#flight-#{@f1.id}") do
+      expect(page).to have_content(@f1.number)
+    end
   end
 
   it 'should list the names of all the flights passengers' do
-    expect(page).to have_content(@p1.name)
-    expect(page).to have_content(@p2.name)
+
+    within("#flight-#{@f1.id}") do
+      expect(page).to have_content(@p1.name)
+      expect(page).to have_content(@p2.name)
+    end
+
   end
 end
