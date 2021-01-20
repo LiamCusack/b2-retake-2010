@@ -11,6 +11,7 @@ describe 'Airlines Show' do
     @i1 = Itinerary.create!(flight_id: @f1.id, passenger_id: @p1.id)
     @i2 = Itinerary.create!(flight_id: @f1.id, passenger_id: @p2.id)
     @i3 = Itinerary.create!(flight_id: @f2.id, passenger_id: @p3.id)
+    @i4 = Itinerary.create!(flight_id: @f1.id, passenger_id: @p3.id)
 
 
     visit airline_path(@a1)
@@ -19,6 +20,6 @@ describe 'Airlines Show' do
   it 'should list the names of all the passengers flying with that airline' do
     expect(page).to have_content(@p1.name)
     expect(page).to have_content(@p2.name)
-    expect(page).to have_content(@p3.name)
+    expect(page).to have_content(@p3.name, count: 1)
   end
 end
